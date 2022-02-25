@@ -1,0 +1,1 @@
+draw_sprite(sprite_index, track, (room_width / 5) * track, y);
