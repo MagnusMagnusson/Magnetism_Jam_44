@@ -4,4 +4,5 @@ z = 2;
 acc = 0;
 dashing = 0;
 
-sped = 100;
+sped = BASE_SPEED;
+y = 1030;

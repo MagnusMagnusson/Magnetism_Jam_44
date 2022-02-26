@@ -7,11 +7,12 @@
     {"id":{"name":"scr_delta","path":"scripts/scr_delta/scr_delta.yy",},"order":4,},
     {"id":{"name":"scr_load_obj","path":"scripts/scr_load_obj/scr_load_obj.yy",},"order":2,},
     {"id":{"name":"o_env","path":"objects/o_env/o_env.yy",},"order":2,},
-    {"id":{"name":"Object6","path":"objects/Object6/Object6.yy",},"order":5,},
+    {"id":{"name":"o_spawner","path":"objects/o_spawner/o_spawner.yy",},"order":5,},
     {"id":{"name":"o_loader","path":"objects/o_loader/o_loader.yy",},"order":3,},
     {"id":{"name":"scr_model","path":"scripts/scr_model/scr_model.yy",},"order":3,},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":11,},
     {"id":{"name":"scr_input","path":"scripts/scr_input/scr_input.yy",},"order":0,},
+    {"id":{"name":"scr_speedometer","path":"scripts/scr_speedometer/scr_speedometer.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

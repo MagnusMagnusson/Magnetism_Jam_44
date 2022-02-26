@@ -25,7 +25,7 @@ if(input(input_up)){
 	}
 }
 
-sped += acc/360;
+sped += 1/800 + acc/800;
 
 if(dashing != 0){
 	x += TRACK_WIDTH_PIXELS / (3 * 5) * sign(dashing);
