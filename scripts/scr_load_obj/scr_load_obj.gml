@@ -64,10 +64,9 @@ function load_obj(argument0, argument1) {
 		}
 	}
 
-	var models = ds_list_create();
-	
 	// Create the vertex buffer
-	var model = undefined;
+	var model = vertex_create_buffer();
+	vertex_begin(model, o_camera.format);
 
 	// Create the lists of position/normal/texture data
 	var vertex_x = ds_list_create();
@@ -97,16 +96,6 @@ function load_obj(argument0, argument1) {
 			}
 		}
 		switch(terms[0]){
-			case "o":{
-				if(!is_undefined(model)){
-					vertex_end(model);
-					ds_list_add(models, model);
-				}
-				
-				model = vertex_create_buffer();
-				vertex_begin(model, o_camera.format);
-				break;
-			}
 			// Add the vertex x, y an z position to their respective lists
 			case "v":
 				ds_list_add(vertex_x, real(terms[1]));
@@ -183,6 +172,8 @@ function load_obj(argument0, argument1) {
 
 	// End the vertex buffer, destroy the lists, close the text file and return the vertex buffer
 
+	vertex_end(model);
+
 	ds_list_destroy(vertex_x);
 	ds_list_destroy(vertex_y);
 	ds_list_destroy(vertex_z);
@@ -198,7 +189,7 @@ function load_obj(argument0, argument1) {
 	file_text_close(obj_file);
 	file_text_close(mtl_file);
 
-	return models;
+	return model;
 
 
 }

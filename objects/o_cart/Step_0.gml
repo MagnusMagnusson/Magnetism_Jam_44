@@ -1,9 +1,36 @@
 if(input(input_left)){
-	x -= 3;
+	x += delta(3);
 }
 
 if(input(input_right)){
-	x += 3;
+	x -= delta(3);
 }
 
-rot+=1;
+if(input_pressed(input_ldash)){
+	dashing += 3;
+}
+
+if(input_pressed(input_rdash)){
+	dashing -= 3;
+}
+
+if(input(input_up)){
+	acc += delta(1);
+} else if(input(input_down)){
+	acc -= delta(1);
+} else{
+	acc -= delta(sign(acc));
+	if(abs(acc) < 1){
+		acc = 0;
+	}
+}
+
+sped += acc/360;
+
+if(dashing != 0){
+	x += TRACK_WIDTH_PIXELS / (3 * 5) * sign(dashing);
+	dashing -= sign(dashing);
+}
+acc = clamp(acc, -36,36);
+
+x = clamp(x, room_width/2 - TRACK_WIDTH_PIXELS/2 + 5, 0.5*(room_width + TRACK_WIDTH_PIXELS) - 5);
