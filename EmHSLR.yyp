@@ -6,6 +6,7 @@
     {"id":{"name":"scr_load_obj","path":"scripts/scr_load_obj/scr_load_obj.yy",},"order":2,},
     {"id":{"name":"o_env","path":"objects/o_env/o_env.yy",},"order":2,},
     {"id":{"name":"o_loader","path":"objects/o_loader/o_loader.yy",},"order":3,},
+    {"id":{"name":"scr_model","path":"scripts/scr_model/scr_model.yy",},"order":3,},
     {"id":{"name":"scr_input","path":"scripts/scr_input/scr_input.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
@@ -44,6 +45,8 @@
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles/obj","resourceVersion":"1.0","name":"cart_obj.mtl","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/obj","resourceVersion":"1.0","name":"cart_obj.obj","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/obj","resourceVersion":"1.0","name":"magnocar.obj","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/obj","resourceVersion":"1.0","name":"magnocar.mtl","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.0.614",

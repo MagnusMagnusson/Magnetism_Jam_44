@@ -64,9 +64,10 @@ function load_obj(argument0, argument1) {
 		}
 	}
 
+	var models = ds_list_create();
+	
 	// Create the vertex buffer
-	var model = vertex_create_buffer();
-	vertex_begin(model, o_camera.format);
+	var model = undefined;
 
 	// Create the lists of position/normal/texture data
 	var vertex_x = ds_list_create();
@@ -79,10 +80,8 @@ function load_obj(argument0, argument1) {
 
 	var vertex_xtex = ds_list_create();
 	var vertex_ytex = ds_list_create();
-	var lnnr = 0;
 	// Read each line in the file
 	while(not file_text_eof(obj_file)){
-		lnnr++;
 		var line = file_text_read_string(obj_file);
 		file_text_readln(obj_file);
 		// Split each line around the space character
@@ -98,6 +97,16 @@ function load_obj(argument0, argument1) {
 			}
 		}
 		switch(terms[0]){
+			case "o":{
+				if(!is_undefined(model)){
+					vertex_end(model);
+					ds_list_add(models, model);
+				}
+				
+				model = vertex_create_buffer();
+				vertex_begin(model, o_camera.format);
+				break;
+			}
 			// Add the vertex x, y an z position to their respective lists
 			case "v":
 				ds_list_add(vertex_x, real(terms[1]));
@@ -133,8 +142,8 @@ function load_obj(argument0, argument1) {
 					var xx = ds_list_find_value(vertex_x, real(data[0]) - 1);
 					var yy = ds_list_find_value(vertex_y, real(data[0]) - 1);
 					var zz = ds_list_find_value(vertex_z, real(data[0]) - 1);
-					//var xtex = ds_list_find_value(vertex_xtex, real(data[1]) - 1);
-					//var ytex = ds_list_find_value(vertex_ytex, real(data[1]) - 1);
+					var xtex = ds_list_find_value(vertex_xtex, real(data[1]) - 1);
+					var ytex = ds_list_find_value(vertex_ytex, real(data[1]) - 1);
 					var nx = ds_list_find_value(vertex_nx, real(data[2]) - 1);
 					var ny = ds_list_find_value(vertex_ny, real(data[2]) - 1);
 					var nz = ds_list_find_value(vertex_nz, real(data[2]) - 1);
@@ -158,8 +167,8 @@ function load_obj(argument0, argument1) {
 					
 					// Add the data to the vertex buffers
 					vertex_position_3d(model, xx, yy, zz);
-					//vertex_normal(model, nx, ny, nz);
-					//vertex_texcoord(model, xtex, ytex);
+					vertex_normal(model, nx, ny, nz);
+					vertex_texcoord(model, xtex, ytex);
 					vertex_color(model, color, alpha);
 				}
 				break;
@@ -173,8 +182,6 @@ function load_obj(argument0, argument1) {
 	}
 
 	// End the vertex buffer, destroy the lists, close the text file and return the vertex buffer
-
-	vertex_end(model);
 
 	ds_list_destroy(vertex_x);
 	ds_list_destroy(vertex_y);
@@ -191,7 +198,7 @@ function load_obj(argument0, argument1) {
 	file_text_close(obj_file);
 	file_text_close(mtl_file);
 
-	return model;
+	return models;
 
 
 }

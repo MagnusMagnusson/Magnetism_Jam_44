@@ -1,1 +1,1 @@
-mdl_cart = load_obj("obj\\cart_obj.obj","obj\\cart_obj.mtl");
+mdl_cart = new Model("obj\\magnocar.obj","obj\\magnocar.mtl");

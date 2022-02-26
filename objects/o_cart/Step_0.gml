@@ -5,3 +5,5 @@ if(input(input_left)){
 if(input(input_right)){
 	x += 3;
 }
+
+rot+=1;
