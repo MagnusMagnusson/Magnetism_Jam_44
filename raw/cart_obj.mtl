@@ -1,0 +1,52 @@
+# Created with Anim8or 1.00
+# Object "object01":
+
+newmtl material01
+Ka 0.725 0.961 0.996
+Kd 0.725 0.961 0.996
+Ks 1 1 1
+d 0.5
+Ns 752.6
+
+newmtl material03
+Ka 0.643 0.212 0.00392
+Kd 0.643 0.212 0.00392
+Ks 1 1 1
+Ns 752.6
+
+newmtl material04
+Ka 0 0 0
+Kd 0 0 0
+Ks 1 1 1
+Ns 752.6
+
+newmtl material05
+Ka 0.769 0.769 0.769
+Kd 0.769 0.769 0.769
+Ks 1 1 1
+Ns 602.1
+
+newmtl material07
+Ka 0.314 0.412 0.976
+Kd 0.314 0.412 0.976
+Ks 1 1 1
+Ns 752.6
+
+newmtl material06
+Ka 0.839 0.0863 0.0235
+Kd 0.839 0.0863 0.0235
+Ks 1 1 1
+Ns 752.6
+
+newmtl material08
+Ka 0.859 0.992 0.886
+Kd 0.859 0.992 0.886
+Ks 1 1 1
+Ns 752.6
+
+newmtl material02
+Ka 0.0863 0.51 0.235
+Kd 0.0863 0.51 0.235
+Ks 1 1 1
+Ns 752.6
+

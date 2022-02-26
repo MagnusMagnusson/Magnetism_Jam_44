@@ -1,13 +1,7 @@
-if(input_pressed(input_left)){
-	track--;
-	if(track < 0){
-		track = 0;
-	}
+if(input(input_left)){
+	x -= 3;
 }
 
-if(input_pressed(input_right)){
-	track++;
-	if(track > 4){
-		track = 4;
-	}
+if(input(input_right)){
+	x += 3;
 }
